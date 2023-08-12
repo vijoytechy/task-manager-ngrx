@@ -1,0 +1,28 @@
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let task of tasks$ | async">
+    <input
+      class="form-check-input me-1"
+      type="checkbox"
+      [checked]="task.completed"
+      (change)="onToggle(task.id)"
+      id="{{ task.id }}"
+    />
+    <label class="form-check-label" for="{{ task.id }}">
+      {{ task.title }}</label
+    >
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <span
+        type="button"
+        (click)="onDelete(task.id)"
+        class="material-symbols-outlined me-md-2"
+      >
+        delete
+      </span>
+    </div>
+  </li>
+  <app-alert
+    *ngIf="showAlert"
+    type="danger"
+    message="Task deleted successfully!"
+  ></app-alert>
+</ul>
