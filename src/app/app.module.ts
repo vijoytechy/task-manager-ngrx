@@ -10,9 +10,10 @@ import { taskReducer } from './state/task/task.reducer';
 import { FormsModule } from '@angular/forms';
 import { AddTaskComponent } from './components/add-task/add-task.component';
 import { AlertComponent } from './components/alert/alert.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
-  declarations: [AppComponent, TaskListComponent, AddTaskComponent, AlertComponent],
+  declarations: [AppComponent, TaskListComponent, AddTaskComponent, AlertComponent, NavbarComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
